@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+  }
+
+  
+body { 
+    
+    letter-spacing: .001em;
+    word-spacing: 1px;
+    overflow: hidden;
+    
+}
+
+#icon { 
+    width:  150px; 
+    height: 150px;
+    //box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
+    //border-radius:86px;
+    float: right;
+    position: relative;
+
+}
+
+.main {
+    height: 1000px;
+    width: 100%;
+    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
+    border-radius:16px;
+    margin: auto;
+    padding-top: 1px;  
+    overflow: hidden;
+    background-color: #d6d2d2
+
+
+}
+
+.menu{
+    width: 800px;
+    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
+    border-radius:10px;
+    margin: auto;
+    background-color: white
+
+}
+
+
+ul { 
+    height: 40px;
+    text-align: center;
+}
+
+
+li {
+    margin: 5px 50px 2px 50px ;
+    display: inline-block;
+    font-size: 22px;
+    font-family: "jazeera-light" ;
+}
+li:hover {
+cursor: pointer;
+color: rgb(134, 127, 117);
+}
+.content { 
+    width: 800px;
+    height: 100% ;
+    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
+    border-radius:16px;    
+    margin: auto;
+    margin-top: 10px;
+    font-family: "helevetica" ;
+    font-size: 20px;
+    padding: 10px;
+    background-color: white ; 
+    
+
+    
+}
+
+.latin { 
+    font-size: 14px;
+}
+
+
+@font-face {
+    font-family: "jazeera-light" ;
+    src: url("fonts/Al-Jazeera-Light.woff2");
+    
+  }
+
+  @font-face {
+    font-family: "helevetica" ;
+    src: url("fonts/helvetica-Regular.ttf");
+    
+
+  }

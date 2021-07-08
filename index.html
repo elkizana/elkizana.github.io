@@ -1,0 +1,83 @@
+<!doctype html>
+
+<html lang="ar"  dir="rtl" >
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>&#x202b;الخزانة</title>
+  <meta name="description" content="خزانة الكتب فيها ثمانية آلاف كتاب للقراءة و البحث فيها">
+  <meta name="author" content="المهدي باباعمرو">
+
+  <meta property="og:title" content="A Basic HTML5 Template">
+  <meta name="keywords" content="الخزانة , المكتبة الشاملة, مكتبة شرعية, مكتبة علمية, خزانة, مكتبة لينكس">
+  <meta property="og:type" content="website">
+  <!-- <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/"> -->
+  <meta property="og:description" content="خزانة الكتب فيها ثمانية آلاف كتاب للقراءة و البحث فيها">
+  <!-- <meta property="og:image" content="image.png"> -->
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="resources/css/normalize.css">
+  <link rel="stylesheet" href="resources/css/style.css">
+  <script src="resources/js/jquery.js"></script>
+</head>
+
+<body>
+
+
+  
+  
+<div class="main">
+<img src="resources/icon.png" id="icon" alt="">
+
+<div class="menu">
+<ul>
+<li class="definition">تعريف الخزانة</li>
+<li class="download">  تنزيل الخزانة  </li>
+</ul>  
+  </div>
+
+<div class="content">
+<section> 
+<!-- <p>الخزانة فيها ثمانية آلاف كتاب من الكتب الشرعية و غيرها يكمنك المطالعة و البحث فيها.</p>
+<p>الخزانة تحمل على الأنظمة الثلاث : <span class="latin"> Linux و Windows و MAC. </span> </p>
+<p>الخزانة مفتوحة المصدر <span class="latin"> (Open Source) </span> </p>
+<p>الخزانة قاعدة بياناتها (كتبها كلها) مأخوذة من المكتبة الشاملة الشهيرة.</p>
+ -->
+ 
+ 
+ 
+ 
+ </section>
+</div>
+
+</div>
+
+
+  <script>
+  let defintion = ` <p>الخزانة فيها ثمانية آلاف كتاب من الكتب الشرعية و غيرها يكمنك المطالعة و البحث فيها.</p>
+<p>الخزانة تحمل على الأنظمة الثلاث : <span class="latin"> Linux و Windows و MAC. </span> </p>
+<p>الخزانة مفتوحة المصدر <span class="latin"> (Open Source) </span> </p>
+<p>الخزانة قاعدة بياناتها (كتبها كلها) مأخوذة من المكتبة الشاملة الشهيرة.</p>
+</section> `
+
+
+
+
+  $(".definition").on("click", function () {
+    $("section").empty()
+    $("section").html(defintion)
+  })
+
+  $(".download").on("click", function () {
+    $("section").empty()
+    //$("section").html(defintion)
+  })
+
+
+  </script>
+</body>
+</html>
