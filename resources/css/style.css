@@ -8,29 +8,28 @@ body {
     letter-spacing: .001em;
     word-spacing: 1px;
     overflow: hidden;
-    
+    overflow: auto;
+
 }
 
 #icon { 
     width:  150px; 
     height: 150px;
-    //box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
-    //border-radius:86px;
     float: right;
-    position: relative;
-
+    font-size: 100px;
+    font-family: "andalus";
+    text-align: center;
+    color: #312c2c
 }
 
 .main {
-    height: 1000px;
+    
     width: 100%;
     box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
     border-radius:16px;
     margin: auto;
-    padding-top: 1px;  
     overflow: hidden;
     background-color: #d6d2d2
-
 
 }
 
@@ -60,36 +59,77 @@ li:hover {
 cursor: pointer;
 color: rgb(134, 127, 117);
 }
+
+h3 { 
+    color: rgb(134, 127, 117);
+
+}
+img { 
+    width: 90%;
+    margin : 0px 20px 20px 0px;
+    border-bottom: black solid 1px;
+    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
+    border-radius: 16px ; 
+}
+.image_title { 
+color : rgb(105, 102, 102) ; 
+font-size: 16px;
+margin:  auto;
+display: block;
+margin-right: 300px;
+}
 .content { 
     width: 800px;
     height: 100% ;
     box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
     border-radius:16px;    
     margin: auto;
-    margin-top: 10px;
     font-family: "helevetica" ;
     font-size: 20px;
     padding: 10px;
     background-color: white ; 
     
-
-    
 }
+
+
+
 
 .latin { 
     font-size: 14px;
 }
 
 
+    
+table {
+    width : 99% ; 
+    border-collapse: collapse;
+    overflow : hidden ; 
+    border-radius: 10px;
+    font-family: "jazeera-light" ;
+  }
+
+th { 
+    
+    
+    border: 1px solid #802121 ; 
+    }
+    td, th {
+      border: 1px solid #802121 ; 
+      text-align: center;
+    }
+    
+
 @font-face {
     font-family: "jazeera-light" ;
     src: url("fonts/Al-Jazeera-Light.woff2");
-    
   }
 
   @font-face {
     font-family: "helevetica" ;
     src: url("fonts/helvetica-Regular.ttf");
-    
+  }
 
+  @font-face {
+    font-family: "andalus" ;
+    src: url("fonts/andalus.ttf");
   }

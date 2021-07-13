@@ -31,7 +31,7 @@
   
   
 <div class="main">
-<img src="resources/icon.png" id="icon" alt="">
+<div id="icon" alt="">الخزانة </div>
 
 <div class="menu">
 <ul>
@@ -42,11 +42,7 @@
 
 <div class="content">
 <section> 
-<!-- <p>الخزانة فيها ثمانية آلاف كتاب من الكتب الشرعية و غيرها يكمنك المطالعة و البحث فيها.</p>
-<p>الخزانة تحمل على الأنظمة الثلاث : <span class="latin"> Linux و Windows و MAC. </span> </p>
-<p>الخزانة مفتوحة المصدر <span class="latin"> (Open Source) </span> </p>
-<p>الخزانة قاعدة بياناتها (كتبها كلها) مأخوذة من المكتبة الشاملة الشهيرة.</p>
- -->
+
  
  
  
@@ -58,15 +54,50 @@
 
 
   <script>
-  let defintion = ` <p>الخزانة فيها ثمانية آلاف كتاب من الكتب الشرعية و غيرها يكمنك المطالعة و البحث فيها.</p>
-<p>الخزانة تحمل على الأنظمة الثلاث : <span class="latin"> Linux و Windows و MAC. </span> </p>
-<p>الخزانة مفتوحة المصدر <span class="latin"> (Open Source) </span> </p>
-<p>الخزانة قاعدة بياناتها (كتبها كلها) مأخوذة من المكتبة الشاملة الشهيرة.</p>
+  let defintion = ` <p>- الخزانة فيها ثمانية آلاف كتاب من الكتب الشرعية و غيرها يمكنك المطالعة و البحث فيها.</p>
+<p>- الخزانة تعمل على الأنظمة الثلاث : <span class="latin"> Linux و Windows و MAC. </span> </p>
+<p>- الخزانة مفتوحة المصدر <span class="latin"> (Open Source) </span> ليس عليها حجر في الإستعمال أو النسخ أو التوزيع أو التغيير. </p>
+<p>- الخزانة قاعدة بياناتها (كتبها كلها) مأخوذة من المكتبة الشاملة الشهيرة.</p>
+<h3> صور من الخزانة :</h3>
+<span class="image_title">محتوى كتاب </span> <br>
+<img src="kizana_screenshots/01.png" alt="">
+
+<span class="image_title">التصانيف</span><br>
+ <img src="kizana_screenshots/02.png" alt="">
+
+ <span class="image_title">المؤلفون</span><br>
+ <img src="kizana_screenshots/03.png" alt="">
+
+ <span class="image_title">البحث</span><br>
+ <img src="kizana_screenshots/04.png" alt="">
+
 </section> `
 
+ let download = `
+ <table>
+ <tr>
+<th>النظام</th>
+<th>الحجم</th>
+<th> الرابط</th>
+</tr>
 
+<tr>
+<td>Linux </td>
+</tr>
 
+  <tr>
+ <td>Windows</td>
+ </tr>
+ 
+ <tr>
+ <td>Mac</td>
+ </tr>
 
+</table>
+ 
+ `
+
+$("section").html(defintion)
   $(".definition").on("click", function () {
     $("section").empty()
     $("section").html(defintion)
@@ -74,7 +105,7 @@
 
   $(".download").on("click", function () {
     $("section").empty()
-    //$("section").html(defintion)
+    $("section").html(download)
   })
 
 
