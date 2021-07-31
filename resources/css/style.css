@@ -4,7 +4,6 @@
 
   
 body { 
-    
     letter-spacing: .001em;
     word-spacing: 1px;
     overflow: hidden;
@@ -23,13 +22,9 @@ body {
 }
 
 .main {
-    
     width: 100%;
-    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
-    border-radius:16px;
     margin: auto;
     overflow: hidden;
-    background-color: #d6d2d2
 
 }
 
@@ -80,7 +75,7 @@ margin-right: 300px;
 }
 .content { 
     width: 800px;
-    height: 100% ;
+    
     box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
     border-radius:16px;    
     margin: auto;
@@ -111,10 +106,10 @@ table {
 th { 
     
     
-    border: 1px solid #802121 ; 
+    border: 1px solid #6d5b5b ; 
     }
     td, th {
-      border: 1px solid #802121 ; 
+      border: 1px solid #bbabab ; 
       text-align: center;
     }
     
