@@ -46,6 +46,7 @@
 <ul>
 <li class="definition">تعريف الخزانة</li>
 <li class="download">  تنزيل الخزانة  </li>
+<li class="contact">  راسلني   </li>
 </ul>  
   </div>
 
@@ -136,7 +137,7 @@
 </table>
  
  `
-
+let contact = ` <p>mehdibabaameur@gmail.com</p>` 
 $("section").html(defintion)
   $(".definition").on("click", function () {
     $("section").empty()
@@ -147,7 +148,10 @@ $("section").html(defintion)
     $("section").empty()
     $("section").html(download)
   })
-
+  $(".contact").on("click", function () {
+    $("section").empty()
+    $("section").html(contact)
+  })
 
   </script>
   

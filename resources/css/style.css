@@ -40,15 +40,21 @@ body {
 
 ul { 
     height: 40px;
-    text-align: center;
+    
 }
 
 
 li {
-    margin: 5px 50px 2px 50px ;
+    margin: 5px 10px 2px 10px ;
     display: inline-block;
     font-size: 22px;
     font-family: "jazeera-light" ;
+}
+.contact { 
+float: left ; 
+font-size:  16px;
+padding-top: 10px;
+
 }
 li:hover {
 cursor: pointer;
