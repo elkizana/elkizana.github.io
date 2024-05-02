@@ -4,27 +4,28 @@ import { playerCannonBody} from './toCannon.js'
 import { playerThreeMeshFullGroup} from './cartoonizeRigid.js'
 export let controls
 
+const startButton = document.getElementById('start_button')
 
 export function initPointerLock() {
      controls = new PointerLockControlsCannon(camera, playerCannonBody,playerThreeMeshFullGroup)
 
     scene.add(controls.getObject())
 
-    container.addEventListener('click', () => {
+    startButton.addEventListener('click', () => {
       controls.lock()
     })
 
     controls.addEventListener('lock', () => {
       controls.enabled = true
       //instructions.style.display = 'none'
-      //container.style.display = 'none'
+      startButton.style.display = 'none'
       fullscreenBtn.style.display = 'none'
 
     })
 
     controls.addEventListener('unlock', () => {
       controls.enabled = false
-      //container.style.display = null
+      startButton.style.display = null
       fullscreenBtn.style.display = null
 
 
