@@ -2,21 +2,62 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>pvc_es</title>
+    <title>B&W Games</title>
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
-  </head>
-  <body>
-    <div id="instructions"></div>
-<!--      <div id="shootingCursor"></div>
- --> 
-	 <div id="container"></div>
-  
     
+  </head>
+  <body id="body">
+
+	 <div id="container">
+
+    <!-- <button id="fullscreen-btn"></button> -->
+
+    <button  id="fullscreen-btn" class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" >
+      <svg class="toggle-fullscreen-svg" width="18" height="18" viewBox="-2 -2 28 28">
+        <g class="icon-fullscreen-enter">
+          <path d="M 2 9 v -7 h 7" />
+          <path d="M 22 9 v -7 h -7" />
+          <path d="M 22 15 v 7 h -7" />
+          <path d="M 2 15 v 7 h 7" />
+        </g>
+        
+        <g class="icon-fullscreen-leave">
+          <path d="M 24 17 h -7 v 7" />
+          <path d="M 0 17 h 7 v 7" />
+          <path d="M 0 7 h 7 v -7" />
+          <path d="M 24 7 h -7 v -7" />
+        </g>
+      </svg>
+    </button>
+
+
   </div>
     
-    
+    <script>
+  const iframe = document.getElementById('container');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+  fullscreenBtn.addEventListener('click', () => {
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) { /* Firefox */
+      iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE/Edge */
+      iframe.msRequestFullscreen();
+    }
+  });
+
+  
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'f') {
+      fullscreenBtn.click();
+    }
+  })
+
+</script>
 		<script type="module" src="./js/initThree.js">
     </script> 
   </body>

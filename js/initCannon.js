@@ -90,7 +90,7 @@ gltf.scene.children.forEach((object) => {
 
       let gui = new dat.GUI();
       gui.width = 200;
-      //gui.hide();
+      gui.hide();
 
 
       gui.close();

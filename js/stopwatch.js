@@ -13,10 +13,6 @@ let myfont
 let material = new THREE.MeshBasicMaterial({ color: "black" })
 
 
-const loader = new FontLoader();
-         loader.load('./assets/fonts/LED Real_Regular.json', function (font) {
-            myfont = font
-    });
 
 
 

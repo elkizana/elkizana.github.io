@@ -1,6 +1,6 @@
-import {  renderer, scene, camera,orbitControls,stats} from "./initThree.js"
+import {  renderer, scene, camera} from "./initThree.js"
 import {  controls} from "./initPointerLock.js"
-import { world,rigidMeshes  , cannonDebugger, mixer, animatedMeshes, animatedBodies} from "./initCannon.js"
+import { world  , cannonDebugger, mixer, animatedMeshes, animatedBodies} from "./initCannon.js"
 import { fullGroupAnimated,fullGroupRigid } from "./cartoonizeRigid.js"
 import {rigidBodies} from "./toCannon.js"
 const timeStep = 1 / 60
@@ -8,17 +8,21 @@ let lastCallTime = performance.now()
 
  export function animate() {
 
-  stats.begin();
+  //stats.begin();
 
-        if (mixer) { 
-          mixer.update(timeStep)
-        }
+     
 
     const time = performance.now() / 1000
     const dt = time - lastCallTime
     lastCallTime = time
     
     if (controls.enabled) {
+
+
+      if (mixer) { 
+        mixer.update(timeStep)
+      }
+
       world.step(timeStep, dt)
       
  
@@ -45,14 +49,16 @@ let lastCallTime = performance.now()
   }
        cannonDebugger ?   cannonDebugger.update()  : null 
   
+       renderer.render(scene, camera)
+      controls.update(dt)
 
+       
   }
 
     requestAnimationFrame(animate)
     
-    controls.update(dt)
-    renderer.render(scene, camera)
-    stats.end()
+    
+    //stats.end()
 
 
     

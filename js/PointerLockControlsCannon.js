@@ -2,9 +2,8 @@ import * as THREE from './three.module.js'
 import * as CANNON from './cannon-es.js'
 import { playerCannonBody} from './toCannon.js'
 import { playerThreeMeshFullGroup} from './cartoonizeRigid.js'
-import {OriginalrigidMeshes,initPosition,initQuaternion,world,CannonBody,materialName} from './initCannon.js'
+import {OriginalrigidMeshes,world,CannonBody,materialName} from './initCannon.js'
 import {rigidBodies} from "./toCannon.js"
-import {scene,camera} from './initThree.js'
 import { toCannon, emptyRigidBodies } from './toCannon.js';
 import { startTimer,resetStopWatch, stopTimer,StopWatchTime,addTextGeometry} from './stopwatch.js'
 
@@ -18,7 +17,9 @@ document.addEventListener('keydown', startEvent, { once: true });
 
 
 let rewind = 1
-let check = true
+let allowStartSound = true
+let allowEndSound = true
+let allowRKey = true 
 
     const listener = new THREE.AudioListener()
     const audioLoader = new THREE.AudioLoader();
@@ -30,14 +31,6 @@ let check = true
       startSound.setRefDistance( 50 );
     });
 
-    const rollSound = new THREE.PositionalAudio( listener );
-    audioLoader.load( './assets/sounds/roll.mp3', function( buffer ) {
-      rollSound.setBuffer( buffer );
-      rollSound.setRefDistance( 3 );
-      if (playerThreeMeshFullGroup) playerThreeMeshFullGroup.add(rollSound)
-      
-
-    });
 
 
     const ballCollisionSound = new THREE.PositionalAudio( listener )
@@ -47,17 +40,6 @@ let check = true
       if (playerThreeMeshFullGroup) playerThreeMeshFullGroup.add(ballCollisionSound)
     });
 
-    const whiteNoise = new THREE.Audio( listener );
-    audioLoader.load( './assets/sounds/white-noise.mp3', function( buffer ) {
-      whiteNoise.setBuffer( buffer );
-      whiteNoise.setLoop( true );
-      whiteNoise.setVolume( 0.01 );
-      whiteNoise.play();
-    });
-    
-    
-
-    
 
     const initPos = []
     
@@ -117,14 +99,14 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
   }
 
     this.cannonBody.addEventListener('collide', (event) => {
-              //console.log(event.contact.bj.position.x == end.x )
-              if (event.contact.bj.position.x == end.x && check ) { 
-                if (check) { startSound.play() }
-                check = false
+              
+              if (event.contact.bj.position.x == end.x && allowEndSound ) { 
+                startSound.play()
+                allowEndSound = false
                 stopTimer()
                 addTextGeometry("Finished in : " + StopWatchTime )
               }
-
+              
            const { contact } = event
            const relativeVelocity = event.contact.getImpactVelocityAlongNormal();
            
@@ -231,8 +213,8 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
 
   onKeyDown = (event) => {
 
-    if (check) startTimer()    
-check = false
+    if (allowStartSound) startTimer()    
+allowStartSound = false
 
 
     switch (event.code) {
@@ -258,18 +240,22 @@ check = false
         break
         
         case 'KeyR':
-          check = true
+          if (allowRKey) { 
+          allowRKey = false
+          allowStartSound = true
+          allowEndSound = true
           reInitiate()
           document.addEventListener('keydown', startEvent, { once: true });
-          playerCannonBody.position = playerCannonBody.position.set(0,2,0) 
+          this.cannonBody.velocity.set(0, 0, 0);
+          this.cannonBody.position.set(0,2.2,0)
           resetStopWatch()
-          playerCannonBody.velocity = playerCannonBody.velocity.set(0,0,0)
+        }
+          setTimeout(() => {
+            allowRKey = true
+          }, 2000);
         break
 
         case 'Enter':
-          /* rewind = rewind + 1
-          // if (rewind < 5) { playerCannonBody.position.y = playerCannonBody.position.y + 25}
-          playerCannonBody.position.y = playerCannonBody.position.y + 10 */
         break
         
         case 'KeyE':
@@ -331,14 +317,7 @@ check = false
 
   update(delta) {
     
-    //console.log(this.inputVelocity)
-/*     if (this.velocity.x > 0.1 || this.velocity.x < -0.1 || this.velocity.z > 0.1 || this.velocity.z < -0.1) {
-      rollSound.setVolume( (this.velocity.x + this.velocity.z) / 4);
-      if (!rollSound.isPlaying ) rollSound.play()
-    } else {
-      rollSound.stop()
-    }
- */
+
     if (this.enabled === false) {
       return
     }

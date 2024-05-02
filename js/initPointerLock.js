@@ -10,17 +10,23 @@ export function initPointerLock() {
 
     scene.add(controls.getObject())
 
-    instructions.addEventListener('click', () => {
+    container.addEventListener('click', () => {
       controls.lock()
     })
 
     controls.addEventListener('lock', () => {
       controls.enabled = true
-      instructions.style.display = 'none'
+      //instructions.style.display = 'none'
+      //container.style.display = 'none'
+      fullscreenBtn.style.display = 'none'
+
     })
 
     controls.addEventListener('unlock', () => {
       controls.enabled = false
-      instructions.style.display = null
+      //container.style.display = null
+      fullscreenBtn.style.display = null
+
+
     })
   }

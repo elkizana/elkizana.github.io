@@ -18,7 +18,7 @@ let edgesModel
 export function cartoonize( solidMeshes ) { 
 
     let threshold = 11 
-    const DARK_LINES = 0x333333
+    const DARK_LINES = 0x000000
     const LIGHT_MODEL = 0xffffff
 
 
@@ -59,7 +59,7 @@ export function cartoonize( solidMeshes ) {
     line.rotation.copy( mesh.rotation ); */
 ////thickLines
     const thickLineGeom = new LineSegmentsGeometry().fromEdgesGeometry( lineGeom );
-    const thickLines = new LineSegments2( thickLineGeom, new LineMaterial( { color: DARK_LINES, linewidth: .001 } ) );
+    const thickLines = new LineSegments2( thickLineGeom, new LineMaterial( { color: DARK_LINES, linewidth: .002 } ) );
     thickLines.position.copy( mesh.position );
     thickLines.scale.copy( mesh.scale );
     thickLines.rotation.copy( mesh.rotation );
@@ -81,7 +81,7 @@ mesh.material.polygonOffsetFactor = 1;
 mesh.material.polygonOffsetUnits = 1;
 mesh.renderOrder = 2;
 mesh.material.transparent = true
-mesh.material.opacity = 0.8
+mesh.material.opacity = 0.9
 //mesh.material.color = new THREE.Color(LIGHT_MODEL)
 
 

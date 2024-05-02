@@ -1,12 +1,10 @@
 import * as THREE from './three.module.js'
-import { initCannon , world} from './initCannon.js'
-import { initPointerLock } from './initPointerLock.js'
+import { initCannon} from './initCannon.js'
 import { animate } from './animate.js'
 import { RGBELoader } from './RGBELoader.js'
 import { EXRLoader } from './EXRLoader.js';
 import { OrbitControls } from './OrbitControls.js'
 import   Stats from './stats.module.js'
-import {startTimer} from './stopwatch.js'
 export  let camera, scene, renderer, stats , texture,light,orbitControls,directionalLight
 
 initThree()
@@ -21,8 +19,8 @@ setTimeout(() => {
   
 export function initThree() {
 
-      const instructions = document.getElementById('instructions')
       const container = document.getElementById( 'container' );
+
       // Camera
       camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1600 );
 
@@ -51,8 +49,14 @@ export function initThree() {
       // Stats.js
       stats = new Stats()
       stats.showPanel( 0 )
-      document.body.appendChild(stats.dom)
-      scene.background = new THREE.Color( 0xF5F5F5); // 0x213722  // 0x333333 // 0xF5F5F5 
+      //document.body.appendChild(stats.dom)
+      //scene.background = new THREE.Color( 0x3F9BE2); // 0x213722  // 0x333333 // 0xF5F5F5 
+      // add image backround 
+      const loader = new THREE.TextureLoader();
+      loader.load( './assets/img/background.jpg', function ( texture ) {
+        scene.background = texture
+        //scene.background = texture
+      })
       
 
       window.addEventListener('resize', onWindowResize)
