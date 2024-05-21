@@ -9,7 +9,40 @@
   </head>
   <body id="body">
     <button id="start_button">PLAY</button> 
+<script src="https://cdn.jsdelivr.net/npm/discord.js"></script>
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const clientId = '1241625823438704703';
+          const redirectUri = 'https://elkizana.github.io/';
+
+          function loginWithDiscord() {
+              const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=identify`;
+              window.location.href = authUrl;
+          }
+
+          function handleRedirect() {
+              const hash = window.location.hash.substr(1);
+              const params = new URLSearchParams(hash);
+              const token = params.get('access_token');
+              if (token) {
+                  fetch('https://discord.com/api/users/@me', {
+                      headers: {
+                          'Authorization': `Bearer ${token}`
+                      }
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      document.getElementById('username').innerText = data.username;
+                  })
+                  .catch(error => console.error('Error:', error));
+              }
+          }
+
+          document.getElementById('login').addEventListener('click', loginWithDiscord);
+          handleRedirect();
+      });
+  </script>
     <button  id="fullscreen-btn" class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" >
       <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
         <g class="icon-fullscreen-enter">
