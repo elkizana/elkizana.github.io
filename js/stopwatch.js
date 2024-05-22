@@ -82,7 +82,7 @@ function shortcutText () {
          loader.load('./assets/fonts/Open Sans_Regular.json', function (font) {
             myfont = font
 
-            const geometry = new TextGeometry( "Press 'R' to restart\n\nPress 'F11' for Fullscreen ", {
+            const geometry = new TextGeometry( "Press 'R' to restart\n\nPress 'F' for Fullscreen ", {
 
               font: font,
               size: 25,
@@ -105,4 +105,4 @@ function shortcutText () {
 
 setTimeout(() => {
   shortcutText()
-}, 1000);
+}, 2000);

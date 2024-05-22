@@ -63,7 +63,7 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     
 
 //if (isMobile()) {
-   /*  this.cameraNipple = nipplejs.create({
+    this.cameraNipple = nipplejs.create({
       zone: document.getElementById('cameraNippleDynamic'),
       mode: 'dynamic',
      // position: {right: '10%', top: '90%'},
@@ -73,11 +73,11 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     });
 
     this.moveCameraHandler = this.moveCameraHandler.bind(this);
-    this.cameraNipple.on('move', this.moveCameraHandler); */
+    this.cameraNipple.on('move', this.moveCameraHandler);
 
  // }
 
-/*   this.movementNipple = nipplejs.create({
+  this.movementNipple = nipplejs.create({
     zone: document.getElementById('movementNippleDynamic'),
     mode: 'static',
     position: {left: '10%', top: '80%'},
@@ -90,7 +90,7 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
   this.movementNipple.on('move', this.moveMovementHandler);
 
   this.endMovementHandler = this.endMovementHandler.bind(this);
-  this.movementNipple.on('end', this.endMovementHandler); */
+  this.movementNipple.on('end', this.endMovementHandler);
 
   
 
@@ -213,27 +213,6 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     document.addEventListener('pointerlockerror', this.onPointerlockError)
     document.addEventListener('keydown', this.onKeyDown)
     document.addEventListener('keyup', this.onKeyUp)
-
-
-    /* document.getElementById('up-button').addEventListener('touchmove', () =>{ this.moveForward = true;provideHapticFeedback() } );
-    document.getElementById('up-button').addEventListener('touchend', () => {this.moveForward = false;   });
-    document.getElementById('up-right-button').addEventListener('touchmove', () => {this.moveForward = true;this.moveRight = true;provideHapticFeedback() });
-    document.getElementById('up-right-button').addEventListener('touchend', () => {this.moveForward = false;this.moveRight = false;  });
-    document.getElementById('up-left-button').addEventListener('touchmove', () => {this.moveForward = true;this.moveLeft = true; provideHapticFeedback() });
-    document.getElementById('up-left-button').addEventListener('touchend', () => {this.moveForward = false;this.moveLeft = false; });
-    document.getElementById('down-button').addEventListener('touchmove', () => {this.moveBackward = true; provideHapticFeedback()});
-    document.getElementById('down-button').addEventListener('touchend', () => {this.moveBackward = false ; } );
-    document.getElementById('down-right-button').addEventListener('touchmove', () => {this.moveBackward = true;this.moveRight = true; provideHapticFeedback() });
-    document.getElementById('down-right-button').addEventListener('touchend', () => {this.moveBackward = false;this.moveRight = false;  });
-    document.getElementById('down-left-button').addEventListener('touchmove', () => {this.moveBackward = true;this.moveLeft = true; provideHapticFeedback() });
-    document.getElementById('down-left-button').addEventListener('touchend', () => {this.moveBackward = false;this.moveLeft = false;  });
-    document.getElementById('left-button').addEventListener('touchmove', () => {this.moveLeft = true; provideHapticFeedback() });
-    document.getElementById('left-button').addEventListener('touchend', () => {this.moveLeft = false ; } );
-    document.getElementById('right-button').addEventListener('touchmove', () => {this.moveRight = true ; provideHapticFeedback() });
-    document.getElementById('right-button').addEventListener('touchend', () => {this.moveRight = false ; } ); */
-
-
-
   }
 
   disconnect() {
@@ -279,13 +258,13 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     let movementY = vector.y;
     //console.log(nipple.angle);
 
-   /*  this.yawObject.rotation.y -= movementX * 0.042
+    this.yawObject.rotation.y -= movementX * 0.042
     this.pitchObject.rotation.x += movementY * 0.042
-    this.pitchObject.rotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, this.pitchObject.rotation.x)) */
+    this.pitchObject.rotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, this.pitchObject.rotation.x))
   }
 
 
-/*   moveMovementHandler(evt, nipple) {
+  moveMovementHandler(evt, nipple) {
 
     let direction = nipple.angle.degree;
     
@@ -367,16 +346,16 @@ if (nipple.force >= 0.4) {//console.log(nipple.force)
   this.moveRight = false;
   this.moveLeft = false;
 }
-  } */
+  }
 
   
   
-/*    endMovementHandler(evt, nipple) {
+   endMovementHandler(evt, nipple) {
         //console.log(nipple)
         this.moveForward = false;
         this.moveBackward = false;
         this.moveRight = false;
-        this.moveLeft = false; */
+        this.moveLeft = false;
     
      /*    const direction = nipple.angle.degree;
     
@@ -385,7 +364,7 @@ if (nipple.force >= 0.4) {//console.log(nipple.force)
       } */
     
     
-     // } 
+      } 
 
   
     onMouseMove = (event) => {
@@ -451,7 +430,7 @@ allowStartSound = false
         /* case 'Enter':
         break
         */
-       /*  case 'KeyE':
+        case 'KeyE':
           playerCannonBody.position.y = playerCannonBody.position.y + 10 
         break
         case 'KeyY':
@@ -460,7 +439,7 @@ allowStartSound = false
 
         case 'KeyX':
           playerCannonBody.position.x = playerCannonBody.position.x - 10 
-        break  */
+        break 
 
         case 'Space':
         if (this.canJump) {
@@ -556,10 +535,6 @@ allowStartSound = false
 
     if (this.playerThreeMesh && this.cannonBody) { 
       this.yawObject.position.copy(this.cannonBody.position)
-        
-
-      //this.yawObject.position.copy(this.cannonBody.position)
-
       this.playerThreeMesh.position.copy(this.cannonBody.position)
         this.playerThreeMesh.quaternion.copy(this.cannonBody.quaternion)
     

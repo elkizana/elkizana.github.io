@@ -1,1 +1,10 @@
 .gitignore
+node_modules
+pvc.blend1
+pvc.blend
+preload.js
+package-lock.json
+package.json
+main.js
+export.py
+dist

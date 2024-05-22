@@ -1,6 +1,6 @@
 import * as CANNON from './cannon-es.js'
 import * as THREE from './three.module.js'
-import { scene,camera   } from './initThree.js'
+import { scene   } from './initThree.js'
 import { GLTFLoader } from './GLTFLoader.js';
 import CannonDebugger from './cannon-es-debugger.js'
 import { initPointerLock } from './initPointerLock.js'
@@ -9,6 +9,7 @@ import { cartoonize } from './cartoonize.js';
 import { cartoonizeRigid } from './cartoonizeRigid.js';
 import { playerCannonBody } from "./toCannon.js"
 import { toCannon } from './toCannon.js';
+import { animate } from './animate.js'
 
 export let playerThreeMesh,mixer,world,playerCannonShape,physicsMaterial = [] ,cannonDebugger , rigidMeshes = [] , animatedBodies = [], animatedMeshes = [],OriginalrigidMeshes = [],initPosition = [] , initQuaternion = [],solidMeshes = [],CannonBody = 'let [a, b] = args;return a + b' , materialName = "rigid"  
 
@@ -44,10 +45,12 @@ export function initCannon() {
 
   //gridHelper
   //var gridHelper = new THREE.GridHelper( 40, 40 );scene.add( gridHelper ) 
+  const startButton = document.getElementById('start_button')
 
   const loader = new GLTFLoader().setPath('./assets/models/');
     loader.load('pvc.glb',   (gltf) => {
-      
+      if (gltf) (startButton.style.display = "block")
+        //if (gltf) (animate())
       mixer = new THREE.AnimationMixer( gltf.scene );
       let clips = gltf.animations;
       clips.forEach(clip => {
@@ -110,6 +113,7 @@ gltf.scene.children.forEach((object) => {
 
 
        initPointerLock()
+       animate()
         })  // end loader load function
    
 

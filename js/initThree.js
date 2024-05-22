@@ -1,20 +1,26 @@
 import * as THREE from './three.module.js'
 import { initCannon} from './initCannon.js'
-import { animate } from './animate.js'
 import { RGBELoader } from './RGBELoader.js'
 import { EXRLoader } from './EXRLoader.js';
 import { OrbitControls } from './OrbitControls.js'
 import   Stats from './stats.module.js'
 export  let camera, scene, renderer, stats , texture,light,orbitControls,directionalLight
 
+
+/* 
+import nipplejs from './nipple.js';
+      
+      console.log(nipplejs);
+      let manager = nipplejs.create();
+       */
 initThree()
 initCannon()
 //initPointerLock()
 //init()
-setTimeout(() => {
-  animate()
+/* setTimeout(() => {
+ // animate()
   
-}, 1000);
+}, 1000); */
 
   
 export function initThree() {
@@ -26,6 +32,8 @@ export function initThree() {
       // Scene
       scene = new THREE.Scene()
       // Renderer
+      
+    
       renderer = new THREE.WebGLRenderer( { antialias: true, alpha:true } );
       renderer.setPixelRatio( window.devicePixelRatio );
       renderer.setSize( window.innerWidth, window.innerHeight );

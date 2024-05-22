@@ -34,8 +34,8 @@ export function toCannon(mesh,body, materialName  ) {
 
 
 const {shape, offset, quaternion} = result;
-mesh.material.name == "rigid" ? body = new CANNON.Body({   mass: 5, material: physicsMaterial })  : body = new CANNON.Body({ mass: 0, material: physicsMaterial }) 
-if (mesh.name == "ball")            body.mass = 6
+mesh.material.name == "rigid" ? body = new CANNON.Body({   mass: 50, material: physicsMaterial })  : body = new CANNON.Body({ mass: 0, material: physicsMaterial }) 
+if (mesh.name == "ball")            body.mass = 50
 if (mesh.name.endsWith("gravity"))  body.mass = 50 
 if (mesh.name.startsWith("kaaba"))  body.mass = 0
 body.addShape(shape, offset, quaternion);
@@ -53,6 +53,11 @@ else if (mesh.name == "ball"  ) {
 }
 else if (mesh.material.name == "animated") { 
     animatedBodies.push(body)   
+}
+
+else if (mesh.material.name == "reset") { 
+    body.mass = 10
+    
 }
 
 return body

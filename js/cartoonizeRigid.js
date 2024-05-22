@@ -1,20 +1,8 @@
 import * as THREE from './three.module.js';
-import { GLTFLoader } from './GLTFLoader.js';
-import *  as BufferGeometryUtils from './BufferGeometryUtils.js';
-import dat from './dat.gui.module.js';
 import { LineSegmentsGeometry } from './LineSegmentsGeometry.js';
 import { LineSegments2 } from './LineSegments2.js';
 import { LineMaterial } from './LineMaterial.js';
-import { OutsideEdgesGeometry } from './OutsideEdgesGeometry.js';
-import { ConditionalEdgesGeometry } from './ConditionalEdgesGeometry.js';
-import { ConditionalEdgesShader } from './ConditionalEdgesShader.js';
-import { ConditionalLineSegmentsGeometry } from './ConditionalLineSegmentsGeometry.js';
-import { ConditionalLineMaterial } from './ConditionalLineMaterial.js';
-import { ColoredShadowMaterial } from './ColoredShadowMaterial.js';
-import {rigidMeshes, animatedMeshes} from "./initCannon.js"
-import {rigidBodies} from "./toCannon.js"
-import { camera, scene, renderer } from './initThree.js';
-import { playerThreeMesh } from './initCannon.js';
+import {  scene } from './initThree.js';
 export let  playerThreeMeshFullGroup
 export let  fullGroupAnimated = []
 export let  fullGroupRigid = []

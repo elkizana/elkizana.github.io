@@ -1,32 +1,26 @@
 import * as THREE from './three.module.js';
-import { GLTFLoader } from './GLTFLoader.js';
 import *  as BufferGeometryUtils from './BufferGeometryUtils.js';
-import dat from './dat.gui.module.js';
 import { LineSegmentsGeometry } from './LineSegmentsGeometry.js';
 import { LineSegments2 } from './LineSegments2.js';
 import { LineMaterial } from './LineMaterial.js';
-import { OutsideEdgesGeometry } from './OutsideEdgesGeometry.js';
 import { ConditionalEdgesGeometry } from './ConditionalEdgesGeometry.js';
 import { ConditionalEdgesShader } from './ConditionalEdgesShader.js';
-import { ConditionalLineSegmentsGeometry } from './ConditionalLineSegmentsGeometry.js';
-import { ConditionalLineMaterial } from './ConditionalLineMaterial.js';
-import { ColoredShadowMaterial } from './ColoredShadowMaterial.js';
-import {rigidMeshes} from "./initCannon.js"
-import { camera, scene, renderer } from './initThree.js';
-let edgesModel
+import { scene } from './initThree.js';
+
 
 export function cartoonize( solidMeshes ) { 
 
     let threshold = 11 
-    const DARK_LINES = 0x000000
+    const DARK_LINES = 0x2e2d2d
     const LIGHT_MODEL = 0xffffff
 
 
         const geometries = [];
-        //glb.updateMatrixWorld( true );
     
         solidMeshes.forEach( eachMesh => {
-                    if (eachMesh.material.name !== "rigid" ) { 
+                    if (eachMesh.material.name !== "rigid" && eachMesh.name !== "reset") {
+                        
+                    
                     const singleGeometry = eachMesh.geometry;
                     singleGeometry.applyMatrix4( eachMesh.matrixWorld );
                         for ( const key in singleGeometry.attributes ) {
