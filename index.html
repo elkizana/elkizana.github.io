@@ -8,8 +8,8 @@
     <link rel="icon" type="image/png" href="./assets/icons/256.png" />
   </head>
 
- <!-- <div id="cameraNippleDynamic"   style="position: absolute; right: 0; width: 50%;height: 100%; border: 1px solid blue ;"></div>
-   <div id="movementNippleDynamic"></div> -->
+ <div id="cameraNippleDynamic"   style="position: absolute; right: 0; width: 50%;height: 100%;"></div>
+   <div id="movementNippleDynamic"  style="position: absolute; left: 0; width: 50%;height: 100% ;" ></div>
 
   <body id="body">
     
@@ -17,140 +17,13 @@
     
     <button id="start_button">PLAY</button> 
 
-    <script src="https://cdn.jsdelivr.net/npm/discord.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          const clientId = '1241625823438704703';
-          const redirectUri = 'https://elkizana.github.io/';
-
-          function loginWithDiscord() {
-              const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=token&scope=identify`;
-              window.location.href = authUrl;
-          }
-
-          function handleRedirect() {
-              const hash = window.location.hash.substr(1);
-              const params = new URLSearchParams(hash);
-              const token = params.get('access_token');
-              if (token) {
-                  fetch('https://discord.com/api/users/@me', {
-                      headers: {
-                          'Authorization': `Bearer ${token}`
-                      }
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                      document.getElementById('username').innerText = data.username;
-                  })
-                  .catch(error => console.error('Error:', error));
-              }
-          }
-
-          document.getElementById('login').addEventListener('click', loginWithDiscord);
-          handleRedirect();
-      });
-  </script>
-
-
-
-    <!-- 
      <img id="restart_button" style="position: absolute; right: 20px ;  bottom: 60%  ;" src = " ./assets/icons/restart.svg " alt="restart SVG"/>  
      <img id="jump_button" style="position: absolute; right: 20px ;width: 70px;  bottom: 20%  ;" src = " ./assets/icons/space.svg " alt="space SVG"/>  
- -->
-
-<!-- 
-     <style>
-      .control-container {
-        width: 30%;
-        height: 100%;
-        border: solid 1px black;
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        display: grid;
-        grid-template-areas: 
-          "up-left up up-right"
-          "left center right"
-          "down-left down down-right";
-        gap: 15px;
-      }
-    
-      .control-button {
-        
-        opacity: 0.5; 
-        //display: none;
-        width: 100%;
-        height: 100% ;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 10%;
-        
-        
-        color: white;
-        user-select: none;
-      }
+ 
+<script>
   
-    #gamepad {
-      pointer-events: none;
-      opacity: 0.0; 
-
-      }
-      
-      #up-button { grid-area: up; }
-      #down-button { grid-area: down; }
-      #left-button { grid-area: left; }
-      #right-button { grid-area: right; }
-      #up-left-button { grid-area: up-left; }
-      #up-right-button { grid-area: up-right; }
-      #down-left-button { grid-area: down-left; }
-      #down-right-button { grid-area: down-right; }
-      #center-button { grid-area: center; visibility: hidden; } /* Hidden button to maintain grid structure */
-    </style>
-
-
-    <div   class="control-container">
-      <img  id="gamepad" style="position: absolute ; width: 100%; height: 100%; z-index: 1;" src = "./assets/icons/gamepad.svg" alt="My Happy SVG" "/> 
-    
-
-      
-      <div id="up-left-button" class="control-button">↖</div>
-      <div id="up-button" class="control-button">↑</div>
-      <div id="up-right-button" class="control-button">↗</div>
-      <div id="left-button" class="control-button">←</div>
-      <div id="center-button" class="control-button"></div>
-      <div id="right-button" class="control-button">→</div>
-      <div id="down-left-button" class="control-button">↙</div>
-      <div id="down-button" class="control-button">↓</div>
-      <div id="down-right-button" class="control-button">↘</div>
-
-    </div>
-     -->
-
-
-
-
-<!-- <script>
-  function provideHapticFeedback() {
-    if ("vibrate" in navigator) {
-        // Vibrate for 100 milliseconds
-        navigator.vibrate(10);
-        console.log("Vibrating");
-    }
-    // Add your button click functionality here
-    
-}
 </script>
- -->
 
-
-
-
-
-
-
-
-
-    
     <button  id="fullscreen-btn" class="js-toggle-fullscreen-btn toggle-fullscreen-btn" aria-label="Enter fullscreen mode" >
       <svg class="toggle-fullscreen-svg" width="28" height="28" viewBox="-2 -2 28 28">
         <g class="icon-fullscreen-enter">
@@ -169,50 +42,91 @@
       </svg>
     </button>
 	
-  
- <!--  <script>
-    /// when  #restart_button is clicked ,   press the "r" key on the keyboard 
-    document.getElementById('restart_button').addEventListener('touchstart', function() {
-            // Create a new keyboard event
-            provideHapticFeedback();
-            var event = new KeyboardEvent('keydown', {
-              key: 'r',
-                keyCode: 82,
-                code: 'KeyR',
-                which: 82,
-                shiftKey: false,
-                ctrlKey: false,
-                metaKey: false
-            });
-            // Dispatch the event
-            document.dispatchEvent(event);
-        });
-
-        document.getElementById('jump_button').addEventListener('touchstart', function() {
-            // Create a new keyboard event
-            provideHapticFeedback();
-            var event = new KeyboardEvent('keydown', {
-              key: ' ',
-                keyCode: 32,
-                code: 'Space',
-                which: 32,
-                shiftKey: false,
-                ctrlKey: false,
-                metaKey: false
-            });
-            // Dispatch the event
-            document.dispatchEvent(event);
-        });
- 
-  </script> -->
-
-    <div id="container">  </div>
+      <div id="container">  </div>
 
     
     <script src="./js/fullscreen_button.js"></script>
 		<script type="module" src="./js/initThree.js">    </script> 
     <script src="./js/nipplejs.js"></script>
- <!--    <script src="./js/ismobile.js"></script> -->
+    <script src="./js/ismobile.js"></script>
 
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+     <style>
+      .control-container {
+        width: 200px;  /* Reduced fixed width */
+        height: 300px; /* Reduced fixed height */
+        border: solid 1px black;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        display: grid;
+        grid-template-areas: 
+          "up-left up up-right"
+          "left center right"
+          "down-left down down-right";
+        gap: 10px;  /* Reduced gap between buttons */
+      }
+    
+      .control-button {
+        width: 50px;   /* Reduced fixed width for buttons */
+        height: 50px;  /* Reduced fixed height for buttons */
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 10%;
+        color: white;
+        user-select: none;
+        opacity: 0.5;
+      }
+    
+      #gamepad {
+        pointer-events: none;
+        opacity: 0.0;
+      }
+      
+      #up-button { grid-area: up; }
+      #down-button { grid-area: down; }
+      #left-button { grid-area: left; }
+      #right-button { grid-area: right; }
+      #up-left-button { grid-area: up-left; }
+      #up-right-button { grid-area: up-right; }
+      #down-left-button { grid-area: down-left; }
+      #down-right-button { grid-area: down-right; }
+      #center-button { grid-area: center; visibility: hidden; } /* Hidden button to maintain grid structure */
+    </style>
+ -->    
+
+
+<!--     <div   class="control-container">
+      <img  id="gamepad" style="position: absolute ; width: 100%; height: 100%; z-index: 1;" src = "./assets/icons/gamepad.svg" alt="My Happy SVG" "/> 
+    
+
+      
+      <div id="up-left-button" class="control-button">↖</div>
+      <div id="up-button" class="control-button">↑</div>
+      <div id="up-right-button" class="control-button">↗</div>
+      <div id="left-button" class="control-button">←</div>
+      <div id="center-button" class="control-button"></div>
+      <div id="right-button" class="control-button">→</div>
+      <div id="down-left-button" class="control-button">↙</div>
+      <div id="down-button" class="control-button">↓</div>
+      <div id="down-right-button" class="control-button">↘</div>
+
+    </div> -->
+     

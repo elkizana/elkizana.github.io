@@ -30,6 +30,7 @@ export function toCannon(mesh,body, materialName  ) {
     }   
      else {
                 result = threeToCannon(mesh,{type: ShapeType.HULL})  
+                
                 }
 
 

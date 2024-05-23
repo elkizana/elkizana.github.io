@@ -62,8 +62,8 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     super()
     
 
-//if (isMobile()) {
-   /*  this.cameraNipple = nipplejs.create({
+if (isMobile()) {
+    this.cameraNipple = nipplejs.create({
       zone: document.getElementById('cameraNippleDynamic'),
       mode: 'dynamic',
      // position: {right: '10%', top: '90%'},
@@ -73,31 +73,28 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     });
 
     this.moveCameraHandler = this.moveCameraHandler.bind(this);
-    this.cameraNipple.on('move', this.moveCameraHandler); */
+    this.cameraNipple.on('move', this.moveCameraHandler);
 
- // }
+  }
 
-/*   this.movementNipple = nipplejs.create({
+   this.movementNipple = nipplejs.create({
     zone: document.getElementById('movementNippleDynamic'),
-    mode: 'static',
-    position: {left: '10%', top: '80%'},
+    mode: 'dynamic',
+    //position: {left: '10%', top: '80%'},
     color: '#2db8bd',
-    size : "100",
+    size : "110",
     //distance : "80"
     
   });
+
+
   this.moveMovementHandler = this.moveMovementHandler.bind(this);
   this.movementNipple.on('move', this.moveMovementHandler);
 
   this.endMovementHandler = this.endMovementHandler.bind(this);
-  this.movementNipple.on('end', this.endMovementHandler); */
+  this.movementNipple.on('end', this.endMovementHandler); 
 
   
-
-// }
-
-
-
     this.enabled = false
     this.cannonBody = cannonBody
     this.cannonBody.linearDamping = 0.5 ;
@@ -279,17 +276,18 @@ class PointerLockControlsCannon extends THREE.EventDispatcher {
     let movementY = vector.y;
     //console.log(nipple.angle);
 
-   /*  this.yawObject.rotation.y -= movementX * 0.042
+    this.yawObject.rotation.y -= movementX * 0.042
     this.pitchObject.rotation.x += movementY * 0.042
-    this.pitchObject.rotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, this.pitchObject.rotation.x)) */
+    this.pitchObject.rotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, this.pitchObject.rotation.x))
   }
 
 
-/*   moveMovementHandler(evt, nipple) {
+  moveMovementHandler(evt, nipple) {
 
     let direction = nipple.angle.degree;
     
 if (nipple.force >= 0.4) {//console.log(nipple.force) 
+  provideHapticFeedback() 
   if (direction > 70 && direction < 110) {  // forward
     this.moveForward = true;
     this.moveBackward = false;
@@ -367,25 +365,25 @@ if (nipple.force >= 0.4) {//console.log(nipple.force)
   this.moveRight = false;
   this.moveLeft = false;
 }
-  } */
+  }
 
   
   
-/*    endMovementHandler(evt, nipple) {
+   endMovementHandler(evt, nipple) {
         //console.log(nipple)
         this.moveForward = false;
         this.moveBackward = false;
         this.moveRight = false;
-        this.moveLeft = false; */
+        this.moveLeft = false; 
     
-     /*    const direction = nipple.angle.degree;
+      /*  const direction = nipple.angle.degree;
     
       if (direction >= 45 && direction < 135) {
         this.moveForward = false;
       } */
     
     
-     // } 
+      } 
 
   
     onMouseMove = (event) => {
@@ -517,7 +515,7 @@ allowStartSound = false
       return
     }
 
-    delta *= 1000
+    delta *= 950
     delta *= 0.1
 
     this.inputVelocity.set(0, 0, 0)

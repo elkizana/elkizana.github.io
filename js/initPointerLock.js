@@ -18,10 +18,15 @@ export function initPointerLock() {
 
     //controls.enabled = true
 
-/* if (isMobile()) {
-
+if (isMobile()) {
+  startButton.addEventListener('touchstart', () => {
+    
     controls.enabled = true
-} */
+    document.getElementById("start_button").style.display = "none";
+    //document.getElementById("fullscreen_btn").style.display = "none";
+
+  })
+}
     controls.addEventListener('lock', () => {
       controls.enabled = true
       
