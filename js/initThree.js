@@ -60,11 +60,11 @@ export function initThree() {
       //scene.background = new THREE.Color( 0x3F9BE2); // 0x213722  // 0x333333 // 0xF5F5F5 
       // add image backround 
       const loader = new THREE.TextureLoader();
-      loader.load( './assets/img/background.jpg', function ( texture ) {
+   /*    loader.load( './assets/img/background.jpg', function ( texture ) {
         scene.background = texture
         //scene.background = texture
-      })
-      
+      }) */
+       scene.background = new THREE.Color(0x00c5e7)
 
       window.addEventListener('resize', onWindowResize)
     }

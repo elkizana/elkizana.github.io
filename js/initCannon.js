@@ -62,7 +62,7 @@ export function initCannon() {
      
      //scene.add(gltf.scene)
 gltf.scene.children.forEach((object) => {
-  if (object.isMesh) { 
+  if (object.isMesh ) { 
    if (object.material.name == "rigid"  || object.material.name == "animated") {
     OriginalrigidMeshes.push(object);
       if (object.material.name == "animated") animatedMeshes.push(object)
