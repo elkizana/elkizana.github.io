@@ -1,142 +1,166 @@
-* {
-    box-sizing: border-box;
-  }
-
-  
-body { 
-    letter-spacing: .001em;
-    word-spacing: 1px;
-    overflow: hidden;
-    overflow: auto;
-    background-color: rgb(255, 255, 255);
-
+@font-face {
+    font-family: "jazeera-light";
+    src: url("fonts/Al-Jazeera-Light.woff2");
 }
 
-#icon { 
-    width:  150px; 
+@font-face {
+    font-family: "helevetica";
+    src: url("fonts/helvetica-Regular.ttf");
+}
+
+@font-face {
+    font-family: "andalus";
+    src: url("fonts/andalus.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    letter-spacing: .001em;
+    word-spacing: 1px;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+}
+
+#icon {
+    width: 150px;
     height: 150px;
     float: right;
     font-size: 100px;
     font-family: "andalus";
     text-align: center;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .main {
     width: 100%;
     margin: auto;
     overflow: hidden;
-
 }
 
-.menu{
+.menu {
     width: 800px;
-    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
-    border-radius:5px;
+    box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
+    border-radius: 5px;
     margin: auto;
-    background-color: white
-
+    background-color: white;
 }
 
-
-ul { 
+ul {
     height: 40px;
-    
 }
-
 
 li {
-    margin: 5px 10px 2px 10px ;
+    margin: 5px 10px 2px 10px;
     display: inline-block;
     font-size: 24px;
-    font-family: "jazeera-light" ;
+    font-family: "jazeera-light";
 }
-.contact { 
-float: left ; 
-font-size:  16px;
-padding-top: 10px;
 
+.contact {
+    float: left;
+    font-size: 16px;
+    padding-top: 10px;
 }
+
 li:hover {
-cursor: pointer;
-color: rgb(134, 127, 117);
-}
-
-h3 { 
+    cursor: pointer;
     color: rgb(134, 127, 117);
+}
 
+h3 {
+    color: rgb(134, 127, 117);
 }
-#favi , .screenshot  { 
+
+#favi, .screenshot {
     width: 90%;
-    margin : 0px 20px 20px 0px;
+    margin: 0px 20px 20px 0px;
     border: rgb(184, 180, 180) solid 1px;
-    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
-    border-radius: 16px ; 
+    box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
+    border-radius: 16px;
 }
-.image_title { 
-color : rgb(105, 102, 102) ; 
-font-size: 20px;
-margin:  auto;
-display: block;
-margin-right: 300px;
-}
-.content { 
-    width: 800px;
-    
-    box-shadow:0 0 1.11111vw rgba(50,50,93,.25),0 0 .34722vw rgba(77,77,77,.1) ;
-    border-radius:5px;    
+
+.image_title {
+    color: rgb(105, 102, 102);
+    font-size: 20px;
     margin: auto;
-    font-family: "helevetica" ;
+    display: block;
+    margin-right: 300px;
+}
+
+.content {
+    width: 800px;
+    box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
+    border-radius: 5px;
+    margin: auto;
+    font-family: "helevetica";
     font-size: 24px;
     padding: 10px;
-    background-color: white ; 
-    
+    background-color: white;
 }
 
-
-
-
-.latin { 
+.latin {
     font-size: 14px;
 }
 
-
-    
 table {
-    width : 99% ; 
+    width: 99%;
     border-collapse: collapse;
-    overflow : hidden ; 
+    overflow: hidden;
     border-radius: 10px;
-    font-family: "jazeera-light" ;
-  }
+    font-family: "jazeera-light";
+}
 
-th { 
+th {
     background-color: black;
-    color  : rgb(255, 255, 255);
-     
+    color: rgb(255, 255, 255);
+}
+
+td, th {
+    border: 1px solid #bbabab;
+    text-align: center;
+    height: 50px;
+}
+
+#download_image {
+    width: 50px;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 1em;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
     }
-    td, th {
-      border: 1px solid #bbabab ; 
-      text-align: center;
-      height: 50px;
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
     }
-    
-    #download_image { 
-        width:  50px;
-
-    }
-
-@font-face {
-    font-family: "jazeera-light" ;
-    src: url("fonts/Al-Jazeera-Light.woff2");
-  }
-
-  @font-face {
-    font-family: "helevetica" ;
-    src: url("fonts/helvetica-Regular.ttf");
-  }
-
-  @font-face {
-    font-family: "andalus" ;
-    src: url("fonts/andalus.ttf");
-  }
+}
