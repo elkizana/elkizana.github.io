@@ -1,6 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    border: 7px solid #0e0e0e;
+
 }
 
 header {
@@ -16,17 +18,32 @@ section {
     border-bottom: 1px solid #0e0e0e;
 
 }
-.screenshot{
-    width: 70%;
-    border-bottom: 2px solid #0e0e0e;
-
+h1 {
+    margin: 0;
+    font-size: 30px;
+    font-family: "jazeera-light";
+}
+.screenshot {
+    /* align in center  */
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 5px;
+   width: 90%;
+   border: rgb(184, 180, 180) solid 1px;
+   box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
+   border-radius: 16px;
 }
 .image_title{
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;    
-    color: #005483;
-    text-decoration: none;
+    /* in center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(105, 102, 102);
+    font-size: 20px;
+    
+    
+    
     }
 
 
@@ -43,6 +60,9 @@ table {
     overflow: hidden;
     border-radius: 10px;
     font-family: "jazeera-light";
+    border: rgb(184, 180, 180) solid 1px;
+   box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
+   border-radius: 16px;
 }
 
 th {
@@ -60,9 +80,4 @@ td, th {
     width: 50px;
 }
 
-
-
-main {
-    padding: 1em;
-}
 
