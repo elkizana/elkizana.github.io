@@ -88,6 +88,20 @@
               <a href="https://ia801509.us.archive.org/34/items/kizana_linux/kizana_linux.zip" onclick="gtag('event', 'download', { 'event_category': 'File', 'event_label': 'kizana_linux.zip' });"> 
                 <img src="resources/download.png" id="download_image" alt="تنزيل المكتبة" title="تنزيل المكتبة" download> 
               </a>
+
+              <script>
+                document.getElementById('download_link').addEventListener('click', function(event) {
+                  event.preventDefault();
+                  gtag('event', 'download', {
+                    'event_category': 'File',
+                    'event_label': 'kizana_linux.zip'
+                  });
+              
+                  setTimeout(function() {
+                    window.location.href = 'https://ia801509.us.archive.org/34/items/kizana_linux/kizana_linux.zip';
+                  }, 100); // 100 milliseconds delay
+                });
+              </script>
             
            <!--  <a href="https://ia801509.us.archive.org/34/items/kizana_linux/kizana_linux.zip"> <img src="resources/download.png" id="download_image" alt="تنزيل المكتبة" title="تنزيل المكتبة" download>  </a> -->
             <!-- <span>آت إن شاء الله</span> -->
