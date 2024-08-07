@@ -23,6 +23,21 @@
 </script>
 
 
+<script>
+    document.addEventListener('click', function(e) {
+  var target = e.target;
+  if (target.tagName === 'A' && target.href.match(/\.(pdf|docx|zip|etc)$/)) {
+    gtag('event', 'download', {
+      'file_name': target.href.split('/').pop(),
+      'file_type': target.href.split('.').pop()
+    });
+  }
+});
+
+</script>
+
+
+
 <body>
     <header>
         <h1>الخزانة</h1>
