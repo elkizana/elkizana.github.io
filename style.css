@@ -5,75 +5,95 @@ body {
 
 }
 
+
+
 header {
-    height: 50px;
-    background-color: #080808;
+    height: 70px;
+    background: linear-gradient(90deg, #080808, #333333);
     color: #fff;
     text-align: center;
-    
+    padding-top: 10px;
 }
+
+header h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
 
 section {
-    padding: 20px;
+    padding: 30px;
     border-bottom: 1px solid #0e0e0e;
-
+    background-color: #f9f9f9;
 }
+
+section h2 {
+    font-size: 28px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+@media (min-width: 600px) {
+    section {
+        padding: 50px;
+    }
+}
+
+
+
 h1 {
     margin: 0;
     font-size: 30px;
     font-family: "jazeera-light";
 }
 .screenshot {
-    /* align in center  */
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   margin-bottom: 5px;
-   width: 70%;
-   border: rgb(184, 180, 180) solid 1px;
-   box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
-   border-radius: 16px;
-}
-.image_title{
-    /* in center */
     display: block;
     margin-left: auto;
     margin-right: auto;
-    color: rgb(105, 102, 102);
-    font-size: 20px;
-    
-    
-    
-    }
-
-
-@media (min-width: 600px) {
-    section {
-        padding: 40px;
-    }
+    margin-bottom: 20px;
+    width: 70%;
+    border: 1px solid rgb(184, 180, 180);
+    box-shadow: 0 0 15px rgba(50, 50, 93, 0.25), 0 0 5px rgba(77, 77, 77, 0.1);
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.screenshot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(50, 50, 93, 0.4), 0 0 10px rgba(77, 77, 77, 0.2);
+}
+
+.image_title {
+    text-align: center;
+    color: rgb(105, 102, 102);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+    
+
 
 
 table {
-    width: 99%;
+    width: 100%;
     border-collapse: collapse;
-    overflow: hidden;
     border-radius: 10px;
     font-family: "jazeera-light";
-    border: rgb(184, 180, 180) solid 1px;
-   box-shadow: 0 0 1.11111vw rgba(50, 50, 93, .25), 0 0 .34722vw rgba(77, 77, 77, .1);
-   border-radius: 16px;
+    border: 1px solid rgb(184, 180, 180);
+    box-shadow: 0 0 15px rgba(50, 50, 93, 0.25), 0 0 5px rgba(77, 77, 77, 0.1);
 }
 
 th {
-    background-color: black;
-    color: rgb(255, 255, 255);
+    background-color: #333333;
+    color: #fff;
+    padding: 15px;
 }
 
 td, th {
     border: 1px solid #bbabab;
     text-align: center;
-    height: 50px;
+    padding: 15px;
 }
 
 #download_image {
@@ -81,3 +101,16 @@ td, th {
 }
 
 
+
+.section4 {
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+    font-size: 18px;
+    color: #555555;
+}
+
+.section4 .image_title {
+    color: #333333;
+    font-weight: bold;
+}
